@@ -1,5 +1,11 @@
 package bgurler.Hrms.core.utilities.results;
 
+import java.util.List;
+
+import bgurler.Hrms.entities.concretes.City;
+import bgurler.Hrms.entities.concretes.EmployeeCv;
+import bgurler.Hrms.entities.concretes.JobAds;
+
 public class SuccessDataResult<T> extends DataResult<T>{
 
 	public SuccessDataResult(T data, String message) {

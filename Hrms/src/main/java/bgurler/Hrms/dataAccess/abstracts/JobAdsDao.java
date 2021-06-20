@@ -14,5 +14,7 @@ import bgurler.Hrms.entities.concretes.JobAds;
 public interface JobAdsDao extends JpaRepository<JobAds, Integer>{
 	@Query("From JobAds where isActive=true")
 	List<JobAds> getByIsActive();
+	List<JobAds> findById(int id);
+	
 	
 }

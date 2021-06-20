@@ -31,19 +31,13 @@ public class EmployerManager implements EmployerService{
 
 	@Override
 	public Result add(Employer employer) {
-		var EmployerControll = employerControll(employer);
-		if(!EmployerControll.isSuccess()) return new ErrorResult(EmployerControll.getMessage());
+		
+		
 		employerDao.save(employer);
-		return new SuccessResult(EmployerControll.getMessage());
+		return new SuccessResult("İş Veren Eklendi");
 	}
-	private Result employerControll(Employer employer) {
-		for (Employer employers : employerDao.findAll()) {
-			if(employer.getWebsite().equals(employers.getWebsite())) {
-				return new ErrorResult("Bu Email Zaten Mevcut!");
-			}
-		}
-		return new SuccessResult("İş Veren Eklendi.");
-	}
+	
+	
 
 	@Override
 	public Result delete(Employer employer) {

@@ -54,6 +54,13 @@ public class JobAdsManager implements JobAdsService{
 		return new SuccessDataResult<List<JobAds>>(this.jobAdsDao.findAll(sort));
 	}
 
+	@Override
+	public DataResult<List<JobAds>> getById(int id) {
+		return new SuccessDataResult<List<JobAds>>(this.jobAdsDao.findById(id),"Veriler Listelendi.");
+	}
+
+	
+
 	
 
 }

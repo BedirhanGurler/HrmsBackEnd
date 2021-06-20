@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,7 @@ import bgurler.Hrms.entities.concretes.JobAds;
 
 @RestController
 @RequestMapping("/api/jobAds")
+@CrossOrigin
 public class JobAdsController {
 	private JobAdsService jobAdsService;
 	
@@ -51,6 +53,11 @@ public class JobAdsController {
 	@GetMapping("/getallbyactive")
 	public DataResult<List<JobAds>> getAllByActive(){
 		return this.jobAdsService.getAllSortedByActive();
+	}
+	
+	@GetMapping("/getById")
+	public DataResult<List<JobAds>> getById(int id){
+		return this.jobAdsService.getById(id);
 	}
 
 }

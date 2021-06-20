@@ -21,6 +21,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+
 @EqualsAndHashCode(callSuper = false)
 @Table(name = "employees")
 public class Employee extends User{
