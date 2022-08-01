@@ -30,6 +30,10 @@ public class Job {
 	
 	@Column(name="department_name")
 	private String departmentName;
+
+	// job_date tablosu eklendi.
+	@Column(name="job_date")
+	private String job_date;
 	
 	
 }
